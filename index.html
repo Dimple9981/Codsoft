@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./images/donationicon.png" type="image/x-icon">
+    <link rel="icon" href="./images/donationicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">Donation</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Donate">Donate</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1>Donate for a cause</h1>
+                        <p>Your small contribution can make a huge change!</p>
+                        <a href="#Donate" class="btn btn-primary">Donate now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- About Section -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <img src="./images/img2.png" alt="About the Donation" class="img-fluid">
+                    </div>
+                    <div class="col-lg-6">
+                        <h2>About Us</h2>
+                        <p> Welcome to our donation page! Your generosity fuels our mission to make a positive impact in the world.
+                            We are dedicated to empowering underprivileged communities and supporting their education.
+                            Every contribution, no matter the size, brings us one step closer to providing clean water, building schools,
+                            and offering life-changing opportunities.
+                            With your support, we can continue to create lasting change, uplift those in need, and build a brighter future for everyone.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Donate Section -->
+        <section class="Donate" id="Donate">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h2>Donate Now!</h2>
+                        <p>Browse through some works done by us previously.</p>
+                        <a href="#" class="btn btn-secondary">View Previous Projects</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="pet-images">
+                            <img src="./images/img3.jpg" alt="Food Donation Drive" class="img-fluid donation-image">
+                            <img src="./images/img4.jpeg" alt="Supporting Education" class="img-fluid donation-image">
+                            <img src="./images/img5.jpg" alt="Providing Shelter" class="img-fluid donation-image">
+                            <img src="./images/img6.jpeg" alt="Medical help" class="img-fluid donation-image">
+                            <img src="./images/img7.jpeg" alt="Scholarships" class="img-fluid donation-image">
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h2>Contact Us</h2>
+                        <p>Made up your mind for donation?
+                           Fill out the details and we will reach you!
+                        </p>
+                    </div>
+                    <div class="col-lg-6">
+                        <form>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Your Name">
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Your Email">
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h3>Reach us</h2>
+                            <p>For Queries conact us at "donations@gmail.com"</p>
+                        </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="bg-dark text-light text-center py-3">
+        <p>&copy; Donation site 2024. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.0-beta1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('a[href^="#"]').on('click', function (event) {
+                event.preventDefault();
+                const target = $(this.getAttribute('href'));
+                if (target.length) {
+                    $('html, body').stop().animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                }
+            });
+            $(window).scroll(function () {
+                $('.fade-in').each(function () {
+                    const bottom_of_element = $(this).offset().top + $(this).outerHeight();
+                    const bottom_of_window = $(window).scrollTop() + $(window).height();
+
+                    if (bottom_of_window > bottom_of_element) {
+                        $(this).addClass('fade-in-element');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
